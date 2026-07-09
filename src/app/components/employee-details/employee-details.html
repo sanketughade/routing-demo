@@ -1,0 +1,252 @@
+@let emp = employee();
+
+@if (emp) {
+    <div class="emp?-card">
+    
+        <div class="emp?-header">
+    
+            <div class="avatar">
+                {{ emp.name.charAt(0) }}
+            </div>
+    
+            <div>
+                <h1>{{ emp.name }}</h1>
+                <p>@{{ emp.username }}</p>
+            </div>
+    
+        </div>
+
+        <div class="route-data">
+            <span>{{ employeeTitle() }}</span>
+            <span>{{ employeeRole() }}</span>
+        </div>
+    
+        <div class="details-grid">
+    
+            <div class="detail-item">
+                <label>Email</label>
+                <p>{{ emp.email }}</p>
+            </div>
+    
+            <div class="detail-item">
+                <label>Phone</label>
+                <p>{{ emp.phone }}</p>
+            </div>
+    
+            <div class="detail-item">
+                <label>Website</label>
+                <p>{{ emp.website }}</p>
+            </div>
+    
+            <div class="detail-item">
+                <label>Company</label>
+                <p>{{ emp.company.name }}</p>
+            </div>
+    
+            <div class="detail-item full-width">
+                <label>Address</label>
+    
+                <p>
+                    {{ emp.address.street }},
+                    {{ emp.address.suite }},
+                    {{ emp.address.city }},
+                    {{ emp.address.zipcode }}
+                </p>
+            </div>
+    
+            <div class="detail-item full-width">
+                <label>Company Motto</label>
+    
+                <p>
+                    "{{ emp.company.catchPhrase }}"
+                </p>
+            </div>
+    
+        </div>
+    
+        <div class="actions">
+
+            <div class="navigation-actions">
+
+                <button
+                    type="button"
+                    class="secondary-btn"
+                    [disabled]="id() === 1"
+                    (click)="previousEmployee()">
+
+                    ← Previous
+
+                </button>
+
+                <button
+                    type="button"
+                    class="secondary-btn"
+                    [disabled]="id() === 10"
+                    (click)="nextEmployee()">
+
+                    Next →
+
+                </button>
+
+            </div>
+
+            <div class="primary-actions">
+
+                <button
+                    type="button"
+                    class="back-btn"
+                    (click)="goBack()">
+
+                    ← Back to Employees
+
+                </button>
+
+                <a
+                    class="projects-link"
+                    [routerLink]="showProjects ? ['.'] : ['projects']">
+
+                    {{ showProjects ? 'Hide Projects' : 'View Projects' }}
+
+                </a>
+
+                <a
+                    class="edit-link"
+                    [routerLink]="showProjects ? ['../', 'edit'] : ['edit']">
+
+                    Edit Employee
+
+                </a>
+
+            </div>
+
+        </div>
+
+    <div class="employee-tabs">
+
+        <a
+            routerLink="."
+            fragment="overview"
+            class="tab">
+
+            Overview
+
+        </a>
+
+        <a
+            routerLink="."
+            fragment="projects"
+            class="tab">
+
+            Projects
+
+        </a>
+
+        <a
+            routerLink="."
+            fragment="attendance"
+            class="tab">
+
+            Attendance
+
+        </a>
+
+    </div>
+
+    <div id="overview" class="section-card">
+
+        <h2>Overview</h2>
+
+        <div class="overview-grid">
+
+            <div>
+                <label>Employee ID</label>
+                <p>{{ emp.id }}</p>
+            </div>
+
+            <div>
+                <label>Department</label>
+                <p>Engineering</p>
+            </div>
+
+            <div>
+                <label>Designation</label>
+                <p>Senior Software Engineer</p>
+            </div>
+
+            <div>
+                <label>Experience</label>
+                <p>5 Years</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="projects" class="section-card">
+
+        <h2>Projects</h2>
+
+        <ul class="project-list">
+
+            <li>Employee Management System</li>
+
+            <li>Angular Playground</li>
+
+            <li>CRM Portal</li>
+
+            <li>Leave Management System</li>
+
+        </ul>
+
+    </div>
+
+    <div id="attendance" class="section-card">
+
+        <h2>Attendance</h2>
+
+        <table class="attendance-table">
+
+            <thead>
+
+                <tr>
+                    <th>Month</th>
+                    <th>Present</th>
+                    <th>Absent</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>April</td>
+                    <td>21</td>
+                    <td>1</td>
+                </tr>
+
+                <tr>
+                    <td>May</td>
+                    <td>22</td>
+                    <td>0</td>
+                </tr>
+
+                <tr>
+                    <td>June</td>
+                    <td>20</td>
+                    <td>2</td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+        <router-outlet />
+
+        
+    
+    </div>
+} @else {
+    <p>No employee!</p>
+}

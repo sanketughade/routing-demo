@@ -1,0 +1,105 @@
+<div class="page-card">
+
+    <h1>Employees</h1>
+
+    <div class="filters">
+
+        <div class="filter-group">
+            <label>Search</label>
+
+            <input
+                type="text"
+                placeholder="Search employee..."
+                [value]="searchText()"
+                (input)="onSearch($event)"
+            >
+        </div>
+
+        <div class="filter-group">
+            <label>City</label>
+
+            <select [value]="selectedCity()" (change)="onFilterChange ('city', $event)">
+                <option value="">All Cities</option>
+
+                @for (city of cities; track city) {
+                    <option [value]="city" [selected]="city === selectedCity()">{{ city }}</option>
+                }
+            </select>
+        </div>
+
+        <div class="filter-group">
+            <label>Company</label>
+
+            <select [value]="selectedCompany()" (change)="onFilterChange('company', $event)">
+                <option value="">All Companies</option>
+
+                @for (company of companies; track company) {
+                    <option [value]="company" [selected]="company === selectedCompany()">{{ company }}</option>
+                }
+            </select>
+        </div>
+
+        <div class="filter-group">
+            <label>Sort</label>
+
+            <select>
+                <option value="nameAsc">Name ↑</option>
+                <option value="nameDesc">Name ↓</option>
+                <option value="usernameAsc">Username ↑</option>
+                <option value="usernameDesc">Username ↓</option>
+            </select>
+        </div>
+
+    </div>
+
+    <table class="employee-table">
+
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Company</th>
+                <th>Details</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            @for (employee of employees(); track employee.id) {
+
+                <tr>
+
+                    <td>{{ employee.id }}</td>
+
+                    <td>{{ employee.name }}</td>
+
+                    <td>{{ employee.username }}</td>
+
+                    <td>{{ employee.email }}</td>
+
+                    <td>{{ employee.phone }}</td>
+
+                    <td>{{ employee.company.name }}</td>
+
+                    <td>
+                        <a
+                            [routerLink]="['/employees', employee.id]"
+                            class="details-link">
+
+                            View Details →
+
+                        </a>
+                    </td>
+
+                </tr>
+
+            }
+
+        </tbody>
+
+    </table>
+
+</div>

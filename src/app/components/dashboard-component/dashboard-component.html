@@ -1,0 +1,87 @@
+<div class="dashboard">
+
+    <h1>Dashboard</h1>
+
+    <p class="subtitle">
+        Welcome back! Here's an overview of your organization.
+    </p>
+
+    <!-- Statistics -->
+
+    @defer (on idle) {
+
+        <app-dashboard-statistics />
+
+    } @placeholder {
+
+        <div class="placeholder-card">
+            Statistics will appear here...
+        </div>
+
+    } @loading (minimum 1s) {
+
+        <div class="loading-card">
+            Loading statistics...
+        </div>
+
+    } @error {
+
+        <div class="error-card">
+            Failed to load statistics.
+        </div>
+
+    }
+
+    <!-- Charts -->
+
+    @defer (on viewport) {
+
+        <app-dashboard-charts />
+
+    } @placeholder {
+
+        <div class="placeholder-card">
+            Scroll down to load charts...
+        </div>
+
+    } @loading {
+
+        <div class="loading-card">
+            Loading charts...
+        </div>
+
+    } @error {
+
+        <div class="error-card">
+            Unable to load charts.
+        </div>
+
+    }
+
+    <!-- Reports -->
+
+    @defer (on timer(3s)) {
+
+        <app-dashboard-reports />
+
+    } @placeholder {
+
+        <div class="placeholder-card">
+            Reports will load after 3 seconds...
+        </div>
+
+    } @loading {
+
+        <div class="loading-card">
+            Loading reports...
+        </div>
+
+    } @error {
+
+        <div class="error-card">
+            Reports failed to load.
+        </div>
+
+    }
+
+</div>

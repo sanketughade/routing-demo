@@ -1,0 +1,268 @@
+.employee-card {
+    max-width: 900px;
+    margin: 32px auto;
+    background: white;
+    border-radius: 12px;
+    padding: 32px;
+    box-shadow: 0 8px 24px rgba(0,0,0,.08);
+}
+
+.employee-header {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 36px;
+}
+
+.avatar {
+    width: 80px;
+    height: 80px;
+
+    border-radius: 50%;
+
+    background: #2563eb;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.employee-header h1 {
+    margin-bottom: 6px;
+    color: #1e293b;
+}
+
+.employee-header p {
+    color: #64748b;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.detail-item label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #64748b;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+}
+
+.detail-item p {
+    color: #1e293b;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+.actions {
+    margin-top: 40px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.navigation-actions,
+.primary-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.secondary-btn,
+.back-btn,
+.projects-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 44px;
+    min-width: 150px;
+
+    padding: 0 20px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #2563eb;
+    color: white;
+
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition: background .2s ease;
+}
+
+.secondary-btn:hover,
+.back-btn:hover,
+.projects-link:hover {
+    background: #1d4ed8;
+}
+
+.secondary-btn:disabled {
+    background: #cbd5e1;
+    cursor: not-allowed;
+}
+
+.employee-tabs {
+    display: flex;
+
+    gap: 12px;
+
+    margin: 40px 0 24px;
+}
+
+.tab {
+    padding: 12px 22px;
+
+    border-radius: 8px;
+
+    background: #eef2ff;
+
+    color: #2563eb;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: .2s;
+}
+
+.tab:hover {
+    background: #2563eb;
+    color: white;
+}
+
+.section-card {
+    margin-bottom: 28px;
+
+    padding: 24px;
+
+    border-radius: 12px;
+
+    background: white;
+
+    box-shadow: 0 4px 16px rgba(0,0,0,.05);
+}
+
+.section-card h2 {
+    margin-bottom: 20px;
+
+    color: #1e293b;
+}
+
+.overview-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+.overview-grid label {
+    display: block;
+
+    margin-bottom: 6px;
+
+    font-size: 13px;
+
+    color: #64748b;
+
+    text-transform: uppercase;
+
+    font-weight: 600;
+}
+
+.overview-grid p {
+    color: #1e293b;
+}
+
+.project-list {
+    padding-left: 22px;
+}
+
+.project-list li {
+    margin-bottom: 10px;
+}
+
+.attendance-table {
+    width: 100%;
+
+    border-collapse: collapse;
+}
+
+.attendance-table th {
+    background: #2563eb;
+
+    color: white;
+
+    text-align: left;
+
+    padding: 12px;
+}
+
+.attendance-table td {
+    padding: 12px;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.route-data {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.route-data span {
+    padding: 6px 12px;
+    background: #eef2ff;
+    color: #2563eb;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.edit-link {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 150px;
+    height: 44px;
+
+    padding: 0 20px;
+
+    border-radius: 8px;
+
+    background: #f59e0b;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    transition: background .2s;
+}
+
+.edit-link:hover {
+    background: #d97706;
+}

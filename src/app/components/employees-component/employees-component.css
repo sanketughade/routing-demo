@@ -1,0 +1,98 @@
+.page-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .06);
+}
+
+.page-card h1 {
+    margin-bottom: 24px;
+    color: #1e293b;
+}
+
+.employee-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.employee-table thead {
+    background: #2563eb;
+    color: white;
+}
+
+.employee-table th,
+.employee-table td {
+    padding: 14px 18px;
+    text-align: left;
+}
+
+.employee-table tbody tr {
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.employee-table tbody tr:nth-child(even) {
+    background: #f8fafc;
+}
+
+.employee-table tbody tr:hover {
+    background: #eef4ff;
+}
+
+.details-link {
+    color: #2563eb;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.details-link:hover {
+    text-decoration: underline;
+}
+
+.filters {
+    display: flex;
+    gap: 20px;
+    align-items: end;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 180px;
+}
+
+.filter-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #64748b;
+}
+
+.filter-group input,
+.filter-group select {
+    height: 42px;
+
+    padding: 0 12px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: .2s;
+}
+
+.filter-group input:focus,
+.filter-group select:focus {
+    border-color: #2563eb;
+
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, .15);
+}
+
+.filter-group input::placeholder {
+    color: #9ca3af;
+}

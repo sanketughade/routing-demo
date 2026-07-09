@@ -1,0 +1,117 @@
+<div class="edit-card">
+
+    <h1>Edit Employee</h1>
+
+    <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+
+        <div class="form-grid">
+
+            <div class="form-group">
+                <label>First Name</label>
+
+                <input
+                    type="text"
+                    name="firstName"
+                    required
+                    #firstName="ngModel"
+                    [(ngModel)]="employee.firstName"    
+                >
+
+                @if (firstName.touched && firstName.errors?.['required']) {
+                    <p class="error">First Name is required</p>
+                }
+            </div>
+
+            <div class="form-group">
+                <label>Last Name</label>
+
+                <input
+                    type="text"
+                    name="lastName"
+                    required
+                    #lastName="ngModel"
+                    [(ngModel)]="employee.lastName"    
+                >
+                @if (lastName.touched && lastName.errors?.['required']) {
+                    <p class="error">Last Name is required</p>
+                }
+            </div>
+
+            <div class="form-group">
+                <label>Email</label>
+
+                <input
+                    type="email"
+                    name="email"
+                    required
+                    email
+                    #email="ngModel"
+                    [(ngModel)]="employee.email"    
+                >
+                @if (email.touched) {
+                    @if (email.errors?.['required']) {
+                        <p class="error">Email is required</p>
+                    }
+                    @if (email.errors?.['email']) {
+                        <p class="error">Email should be in correct format</p>
+                    }
+                }
+            </div>
+
+            <div class="form-group">
+                <label>Phone</label>
+
+                <input
+                    type="text"
+                    name="phone"
+                    required
+                    #phone="ngModel"
+                    [(ngModel)]="employee.phone"    
+                >
+                @if (phone.touched && phone.errors?.['required']) {
+                    <p class="error">Phone Number is required</p>
+                }
+            </div>
+
+            <div class="form-group full-width">
+                <label>Company</label>
+
+                <input
+                    type="text"
+                    name="company"
+                    required
+                    #company="ngModel"
+                    [(ngModel)]="employee.company"    
+                >
+                @if (company.touched && company.errors?.['required']) {
+                    <p class="error">Company is required</p>
+                }
+            </div>
+
+        </div>
+
+        <div class="form-actions">
+
+            <button
+                type="submit"
+                class="save-btn"
+                [disabled]="form.invalid">
+
+                Save Changes
+
+            </button>
+
+            <button
+                type="button"
+                class="cancel-btn"
+                [routerLink]="['../']">
+
+                Cancel
+
+            </button>
+
+        </div>
+
+    </form>
+
+</div>

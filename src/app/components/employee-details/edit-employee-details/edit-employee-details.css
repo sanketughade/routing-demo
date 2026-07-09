@@ -1,0 +1,129 @@
+.edit-card {
+    max-width: 900px;
+
+    margin: 32px auto;
+
+    padding: 32px;
+
+    background: white;
+
+    border-radius: 12px;
+
+    box-shadow: 0 8px 24px rgba(0,0,0,.08);
+}
+
+.edit-card h1 {
+    margin-bottom: 28px;
+
+    color: #1e293b;
+}
+
+.form-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 24px;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 14px;
+
+    font-weight: 600;
+
+    color: #475569;
+}
+
+.form-group input {
+    height: 44px;
+
+    padding: 0 14px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+
+    transition: .2s;
+}
+
+.form-group input:focus {
+    outline: none;
+
+    border-color: #2563eb;
+
+    box-shadow: 0 0 0 3px rgba(37,99,235,.15);
+}
+
+.form-actions {
+    display: flex;
+
+    gap: 16px;
+
+    margin-top: 36px;
+}
+
+.save-btn,
+.cancel-btn {
+    height: 44px;
+
+    padding: 0 22px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+.save-btn {
+    background: #2563eb;
+
+    color: white;
+}
+
+.save-btn:hover {
+    background: #1d4ed8;
+}
+
+.cancel-btn {
+    background: #e2e8f0;
+
+    color: #334155;
+}
+
+.cancel-btn:hover {
+    background: #cbd5e1;
+}
+
+.error {
+    color: red;
+}
+
+.save-btn:disabled {
+    background: #cbd5e1;
+    color: #64748b;
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+.save-btn:disabled:hover {
+    background: #cbd5e1;
+}
